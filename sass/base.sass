@@ -1,0 +1,243 @@
+@import 'variables'
+@import 'fonts'
+@import 'layout'
+@import 'components'
+
+.wrapper
+    position: relative
+    background-image: url('../img/bg.svg')
+    width: 100%
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    z-index: 0
+
+// .startbg
+//     z-index: 6
+//     background-image: url('../img/bg.svg')
+//     //background-image: url('../img/ss2.jpg')
+//     background-position: center
+//     background-repeat: no-repeat
+//     background-size: cover
+//     opacity: .5
+
+// .startbg1
+//     z-index: 7
+//     background-image: url('../img/ss2.jpg')
+//     //background-image: url('../img/ss2.jpg')
+//     background-position: center
+//     background-repeat: no-repeat
+//     background-size: cover
+//     opacity: .6
+
+.video
+    z-index: 4
+    position: fixed
+    right: 0
+    bottom: 0
+    min-width: 100%
+    min-height: 100%
+
+    // .play_game
+    //     width: 400px
+    //     height: 120px
+    //     margin: 0
+    //     border-radius: 120px
+    //     border: none
+    //     font-size: 56px
+    //     font-family: $osf
+    //     font-weight: 700
+    //     text-transform: uppercase
+
+.logo
+    z-index: 21
+    // position: absolute
+    width: 560px
+    height: 500px
+    background-repeat: no-repeat
+    background-image: url('../img/logo.png')
+
+    &:hover
+        cursor: pointer
+
+.turns
+    position: absolute
+    z-index: 20
+    top: 0%
+    left: 3%
+
+    .next_round
+        width: 140px
+        height: 48px
+        font-size: 17px
+        font-family: $osf
+        font-weight: 700
+        color: #F99F00
+        background-color: #340A1F
+        border-radius: 24px
+        margin-right: 24px
+        border: 1px solid #9d5f1f
+        
+        &:hover
+            cursor: pointer
+
+    .next_round.round1
+        background-color: #1DD11A
+        color: #fff
+        
+.music_box
+    position: relative
+    z-index: 4
+    padding: 24px
+    border: 1px solid #9d5f1f
+    border-radius: 32px
+
+.music_notes
+    padding-top: 64px
+    padding-bottom: 64px
+    border-radius: 32px
+    border: 8px solid #9d5f1f
+    background-color: #340A1F
+
+.category
+    margin-bottom: 64px
+
+.category4
+    margin-bottom: 0
+
+.category_name
+    z-index: 2
+    width: 540px
+    height: 132px
+    margin-right: 40px
+    border-radius: 0 24px 24px 0
+    padding: 12px 12px 12px 36px
+    background-color: #F99F00
+    box-shadow: 0px 0px 20px 0px rgba(249,159,0,1)
+
+    .name-text
+        text-align: left
+
+    .fname
+        color: #000
+        font-weight: 700
+        font-family: $osf
+        font-size: 46px
+
+    .sname
+        color: #000
+        font-weight: 400
+        font-family: $osf
+        font-size: 32px
+
+.note
+    z-index: 2
+    position: relative
+    width: 200px
+    height: 164px
+    margin-right: 40px
+    background-repeat: no-repeat
+    background-image: url('../img/note.svg')
+
+    &:hover
+        cursor: pointer
+
+    .note-text
+        font-family: $osf
+        font-weight: 700
+        color: #FFCAC6
+        text-shadow: 0px 0px 11px #F95F6A
+        font-size: 80px
+        position: absolute
+        top: 34%
+        left: 19%
+        opacity: 0
+
+
+.lines
+    position: absolute
+    top: 15%
+    left: 0
+    width: 100%
+
+    .line
+        box-shadow: 0px 0px 24px 0px rgba(249,95,106,1)
+        background-color: #F95F6A
+        height: 4px
+        margin-bottom: 24px
+
+.players
+    margin-left: 32px
+
+    .player
+        width: 400px
+        height: 230px
+        position: relative
+        margin-bottom: 24px
+        border-radius: 200px 0 0 200px
+        background: linear-gradient(90deg, #5B0020 0%, #970805 61%, #E34B24 88%, #750920 100%)
+    
+    .player4
+        margin-bottom: 0
+
+    .score
+        width: 214px
+        height: 214px
+        margin: 8px 0 0 12px
+        background-repeat: no-repeat
+        background-image: url('../img/player_circle.svg')
+
+        .player_score
+            font-size: 40px
+            width: 96px
+            height: 64px
+            border-radius: 32px
+            text-align: center
+            color: #ffffff
+            font-family: $osf
+            background-color: #640583
+
+    .player_name
+        position: absolute
+        width: 360px
+        height: 58px
+        bottom: 8%
+        padding-left: 40px
+        font-family: $osf
+        color: #E8D0FF
+        font-size: 24px
+        background-image: url('../img/name_line.svg')
+
+    .player_turn
+        position: absolute
+        right: 8%
+        top: 12%
+        height: 60px
+        width: 60px
+        border-radius: 50%
+        background-color: #261239
+        
+        &:hover
+            cursor: pointer
+
+        .turn_circle
+            height: 40px
+            width: 40px
+            border-radius: 50%
+            background-color: #1DD11A
+
+        .turn_circle_4
+            opacity: 0
+        .turn_circle_3
+            opacity: 0 
+        .turn_circle_2
+            opacity: 0
+        .add
+            position: absolute
+            top: 150%
+            width: 24px
+            height: 24px
+            border-radius: 24px
+            opacity: 1
+            background-color: #F95F6A
+        

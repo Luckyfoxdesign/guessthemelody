@@ -1,0 +1,16 @@
+{
+  "name": "guess-the-melody",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./js/core.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gsap": "^2.1.2"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Lucky Fox Design",
+  "license": "MIT"
+}
