@@ -5,71 +5,25 @@ var turnTeam = document.querySelectorAll('.player_turn')
 
 var tour = 0
 var noteClass
+var playingFlag = false
+var t1_flag = 0
 var soundsC1 = ion.sound({
   sounds: [
     {
-      alias: 't1-c1-n1',
-      name: '1r_1c_1n_santabarbara'
+      alias: '2r_1c_1t',
+      name: '2r_1c_1t'
     },
     {
-      alias: 't1-c1-n2',
-      name: '1r_1c_2n_friends'
+      alias: '2r_1c_2t',
+      name: '2r_1c_2t'
     },
     {
-      alias: 't1-c1-n3',
-      name: '1r_1c_3n_igraprestolov'
+      alias: '2r_1c_3t',
+      name: '2r_1c_3t'
     },
     {
-      alias: 't1-c1-n4',
-      name: '1r_1c_4n_elenandrebyata'
-    },
-    {
-      alias: 't1-c2-n1',
-      name: '1r_2c_1n_iskala'
-    },
-    {
-      alias: 't1-c2-n2',
-      name: '1r_2c_2n_hochesh'
-    },
-    {
-      alias: 't1-c2-n3',
-      name: '1r_2c_3n_spasibo'
-    },
-    {
-      alias: 't1-c2-n4',
-      name: '1r_2c_4n_romashki'
-    },
-    {
-      alias: 't1-c3-n1',
-      name: '1r_3c_1n_monetochka'
-    },
-    {
-      alias: 't1-c3-n2',
-      name: '1r_3c_2n_rozovoevino'
-    },
-    {
-      alias: 't1-c3-n3',
-      name: '1r_3c_3n_nezabudka'
-    },
-    {
-      alias: 't1-c3-n4',
-      name: '1r_3c_4n_bilanmolnia'
-    },
-    {
-      alias: 't1-c4-n1',
-      name: '1r_4c_1n_edinstvennaya'
-    },
-    {
-      alias: 't1-c4-n2',
-      name: '1r_4c_2n_cvetnastroeniya'
-    },
-    {
-      alias: 't1-c4-n3',
-      name: '1r_4c_3n_zayka'
-    },
-    {
-      alias: 't1-c4-n4',
-      name: '1r_4c_4n_sneg'
+      alias: '2r_1c_4t',
+      name: '2r_1c_4t'
     }
   ],
   path: '../music/',
@@ -106,6 +60,19 @@ function hideStartScreen() {
     element.addEventListener('click', selectTeam)
   })
 }
+// var intervalId
+// var xxxx = 50
+// function ball(object){
+//   intervalId= setInterval(() => {
+//     xxxx += 1
+    
+//     return z
+//   }, 1000) 
+//   object.innerHTML = xxxx
+// }
+// function sttt() {
+//   clearInterval(intervalId)
+// }
 
 function playNote() {
   var regExpCat = [
@@ -117,7 +84,7 @@ function playNote() {
 
   if (noteClass == null) {
     noteClass = this.className
-    console.log(noteClass)
+    // console.log(this.firstChild)
     this.setAttribute('clicked', 'yes')
     TweenMax.to(this, 0.4, {
       css: { backgroundImage: "url('../img/note_active.svg')" },
@@ -129,10 +96,37 @@ function playNote() {
     })
 
     if (tour == 0) {
-      var soundName = this.getAttribute('sound')
-      console.log(soundName)
+      var soundName;
+      playingFlag = true
+      
+      if(t1_flag == 0) {
+        soundName = this.getAttribute('sound')
+        ion.sound.play(soundName)
+      }
+      if(t1_flag == 1) {
+        soundName = this.getAttribute('sound2')
+        ion.sound.play(soundName)
+      }
+      if(t1_flag == 2) {
+        soundName = this.getAttribute('sound3')
+        ion.sound.play(soundName)
+      }
+      if(t1_flag == 3) {
+        soundName = this.getAttribute('sound4')
+        ion.sound.play(soundName)
+      }
+      if(t1_flag > 3) {
+            return
+      }
+
+    //   intervalId = setInterval(function(){
+
+    //     console.log("wait for me!");
+     
+    //  }, 1000);
+
       regExpCat.forEach(element => {
-        if (soundName.match(element) == 'c1') {
+        if (soundName.match(element) == '1c') {
           catNames.forEach(el => {
             if (el.className != 'category_name category_name1') {
               el.setAttribute('active', 'no')
@@ -181,10 +175,11 @@ function playNote() {
           })
         }
       })
-      ion.sound.play(soundName)
     }
   } else {
     if (this.getAttribute('clicked') == 'yes' && this.className == noteClass) {
+      // t1_flag = t1_flag + 1
+      // playingFlag = false
       this.setAttribute('clicked', 'no')
       catNames.forEach(element => {
         if (element.getAttribute('active') == 'no') {
@@ -196,11 +191,9 @@ function playNote() {
           })
         }
       })
-      // TweenMax.to(this, 0.4, {
-      //   css: { backgroundImage: 'url("../img/note.svg")' }
-      // })
       noteClass = null
       ion.sound.stop()
+      // sttt()
     }
   }
 }

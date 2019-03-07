@@ -165,6 +165,22 @@
   background-size: cover;
   z-index: 0; }
 
+.startbg {
+  z-index: 6;
+  background-image: url("../img/bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .5; }
+
+.startbg1 {
+  z-index: 7;
+  background-image: url("../img/ss2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .6; }
+
 .video {
   z-index: 4;
   position: fixed;
@@ -200,9 +216,6 @@
     border: 1px solid #9d5f1f; }
     .turns .next_round:hover {
       cursor: pointer; }
-  .turns .next_round.round1 {
-    background-color: #1DD11A;
-    color: #fff; }
 
 .music_box {
   position: relative;
@@ -340,11 +353,3 @@
       opacity: 0; }
     .players .player_turn .turn_circle_2 {
       opacity: 0; }
-    .players .player_turn .add {
-      position: absolute;
-      top: 150%;
-      width: 24px;
-      height: 24px;
-      border-radius: 24px;
-      opacity: 1;
-      background-color: #F95F6A; }

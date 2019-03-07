@@ -78,8 +78,8 @@ var soundsC1 = ion.sound({
   volume: 1
 })
 
-document.addEventListener('DOMContentLoaded', hideStartScreen)
-// logo.addEventListener('click', hideStartScreen)
+// document.addEventListener('DOMContentLoaded', hideStartScreen)
+logo.addEventListener('click', hideStartScreen)
 
 function selectTeam() {
   if (this.getAttribute('active') == 'no') {
@@ -107,22 +107,22 @@ function hideStartScreen() {
     element.addEventListener('click', selectTeam)
   })
 
-  // TweenMax.fromTo(
-  //   '.start',
-  //   1,
-  //   {
-  //     css: {
-  //       zIndex: 24,
-  //       opacity: 1
-  //     }
-  //   },
-  //   {
-  //     css: {
-  //       zIndex: 0,
-  //       opacity: 0
-  //     }
-  //   }
-  // )
+  TweenMax.fromTo(
+    '.start',
+    1,
+    {
+      css: {
+        zIndex: 24,
+        opacity: 1
+      }
+    },
+    {
+      css: {
+        zIndex: 0,
+        opacity: 0
+      }
+    }
+  )
 }
 
 function playNote() {
